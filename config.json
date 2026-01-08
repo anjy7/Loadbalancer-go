@@ -1,0 +1,24 @@
+{
+    "port": "8080",
+    "jwt_secret": "your-secret-key-here,leave empty if don't want to use auth middleware",
+    "load_balancer": {
+        "algorithm": "round_robin"
+    },
+    "rate_limit": {
+        "enable":true,
+        "requests_per_second": 100,
+        "burst_size": 50
+    },
+    "backends": [
+        {
+            "id": "backend1",
+            "url": "http://localhost:8081",
+            "health": true
+        },
+        {
+            "id": "backend2",
+            "url": "http://localhost:8082",
+            "health": true
+        }
+    ]
+}
